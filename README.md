@@ -7,7 +7,7 @@ This repository contains the infrastructure configurations, multi-vector attack 
 ### Environment Specifications
 * **Investigator Account Profile:** `wnwelih`
 * **Target Host Name (Hostname):** `mit8321`
-* **Operating System Deck:** Ubuntu 64-bit Virtual Machine (VMware Workstation)
+* **Operating System Deck:** Ubuntu 26.04 64-bit Virtual Machine (VMware Workstation)
 * **Chronological Alignment:** West Africa Time (WAT Context)
 * **Network Infrastructure Scope:** Host-Isolated Docker Bridge Subnet (`172.18.0.0/16`)
 
