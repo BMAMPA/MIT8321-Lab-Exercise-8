@@ -1,0 +1,143 @@
+
+version: '3.8'
+
+
+
+networks:
+
+  securebank-net:
+
+    driver: bridge
+
+    ipam:
+
+      config:
+
+        - subnet: 172.18.0.0/16
+
+
+
+services:
+
+  securebank-app:
+
+    build: .
+
+    container_name: securebank-app
+
+    restart: always
+
+    user: "root" # Structural Risk: Container daemons running with root privileges
+
+    networks:
+
+      securebank-net:
+
+        ipv4_address: 172.18.0.2
+
+    ports:
+
+      - "8080:8080"
+
+    volumes:
+
+      - ./evidence:/evidence:rw # Risk: Read-Write access allows tampering
+
+    environment:
+
+      - FLASK_ENV=development
+
+
+
+  securebank-mysql:
+
+    image: mysql:8.0
+
+    container_name: securebank-mysql
+
+    networks:
+
+      securebank-net:
+
+        ipv4_address: 172.18.0.3
+
+    environment:
+
+      MYSQL_ROOT_PASSWORD: SuperSecretPassword2026
+
+      MYSQL_DATABASE: securebank
+
+
+
+  kali-attacker:
+
+    image: kalilinux/kali-rolling:latest
+
+    container_name: kali-attacker
+
+    privileged: true
+
+    tty: true
+
+    networks:
+
+      securebank-net:
+
+ipv4_address: 172.18.0.2
+
+    ports:
+
+      - "8080:8080"
+
+    volumes:
+
+      - ./evidence:/evidence:rw # Risk: Read-Write access allows tampering
+
+    environment:
+
+      - FLASK_ENV=development
+
+
+
+  securebank-mysql:
+
+    image: mysql:8.0
+
+    container_name: securebank-mysql
+
+    networks:
+
+      securebank-net:
+
+        ipv4_address: 172.18.0.3
+
+    environment:
+
+      MYSQL_ROOT_PASSWORD: SuperSecretPassword2026
+
+      MYSQL_DATABASE: securebank
+
+
+
+  kali-attacker:
+
+    image: kalilinux/kali-rolling:latest
+
+    container_name: kali-attacker
+
+    privileged: true
+
+    tty: true
+
+    networks:
+
+      securebank-net:
+
+        ipv4_address: 172.18.0.7
+
+    volumes:
+
+      - /var/run/docker.sock:/var/run/docker.sock
+
+      - ./evidence:/evidence:rw
+

@@ -1,0 +1,2 @@
+[2026-11-10 08:54:00 WAT] Laboratory Infrastructure Deployed Successfully.
+[2026-11-10 09:20:00 WAT] Attacker IP: 172.16.0.100

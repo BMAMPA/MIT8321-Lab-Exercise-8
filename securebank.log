@@ -1,0 +1,9 @@
+
+[2026-11-10 09:04:15 WAT] IP: 172.18.0.7 - GET /invalid_path_probe - Payload: None
+
+[2026-11-10 09:09:32 WAT] IP: 172.18.0.7 - POST /login - Payload: username=admin' OR '1'='1
+
+[2026-11-10 09:16:45 WAT] IP: 172.18.0.7 - GET /accounts - Payload: id=1;whoami
+
+[2026-11-10 09:18:12 WAT] IP: 172.18.0.7 - GET /search - Payload: q=<script>alert(1)</script>
+

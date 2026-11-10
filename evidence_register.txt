@@ -1,0 +1,23 @@
+
+======================================================================================================
+
+                                    CENTRAL EVIDENCE REGISTER
+
+======================================================================================================
+
+Asset ID  Source Container  Target Host File System Path      Log Description & Target Format
+
+----------------------------------------------------------------------------------------------------------------------
+
+EVID-01   securebank-app    /evidence/securebank.log          Raw Web Application Log Output
+
+EVID-02   securebank-app    /evidence/attack_timeline.txt     Chronological Incident Tracking Text
+
+EVID-03   securebank-app    /evidence/running_processes.txt   System Process Tree Listing (ps auxf)
+
+EVID-04   securebank-app    /evidence/logstash.conf           SIEM Parser Filter Directives (Logstash)
+
+EVID-05   securebank-app    /evidence/attack.sh               Automated Offensive Simulation Script
+
+======================================================================================================
+
